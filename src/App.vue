@@ -1,14 +1,17 @@
 <template>
   <div id="app">
     <Header />
+
     <div class="container" v-if="!jobsLoader">
       <transition name="fade">
         <FilterBox />
       </transition>
+
       <transition-group name="fade" tag="div">
         <JobCard v-for="job in filteredJobs" :key="job.id" :job="job" />
       </transition-group>
     </div>
+
     <div v-else class="loader">
       <Loader />
     </div>
@@ -40,6 +43,7 @@ export default {
 
       return this.jobList.filter((job) => {
         const tagList = this.getTagList(job).map((job) => job.toLowerCase())
+
         return store.tags.every((tag) => tagList.includes(tag))
       })
     },
@@ -56,6 +60,7 @@ export default {
   created() {
     this.fetchJobs(this.baseUrl + 'data.json')
   },
+
   mixins: [mixin],
 }
 </script>

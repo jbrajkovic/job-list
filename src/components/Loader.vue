@@ -1,3 +1,4 @@
+<!--CSS LOADER FROM LOADING.IO -->
 <template>
   <div class="lds-spinner">
     <div></div>

@@ -14,8 +14,8 @@
 
 <script>
 import { store, mutations } from '../store'
-import Card from './shared/Card'
 import TagRemovable from './TagRemovable'
+import Card from './shared/Card'
 
 export default {
   components: { Card, TagRemovable },

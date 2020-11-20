@@ -16,8 +16,6 @@ export const mutations = {
     store.tags = []
   },
   removeTag(tag) {
-    store.tags = store.tags.filter(
-      (storeTag) => storeTag.toLowerCase() !== tag.toLowerCase()
-    )
+    store.tags = store.tags.filter((storeTag) => storeTag !== tag.toLowerCase())
   },
 }

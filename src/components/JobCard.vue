@@ -9,6 +9,7 @@
           <Badge text="Featured" />
         </div>
       </div>
+
       <div class="job-info-position">
         <p>
           <strong> {{ job.position }}</strong>
@@ -22,6 +23,7 @@
         <p>{{ job.location }}</p>
       </div>
     </div>
+
     <div class="tags">
       <Tag v-for="(tag, i) in getTagList(job)" :key="i" :tag="tag" />
     </div>
@@ -30,8 +32,8 @@
 
 <script>
 import Card from './shared/Card'
-import Tag from './Tag'
 import Badge from './Badge'
+import Tag from './Tag'
 
 import mixin from '../mixin'
 
@@ -44,6 +46,7 @@ export default {
     imageUrl() {
       let path = this.job.logo
       const image = path.substring(path.lastIndexOf('/') + 1)
+
       return require(`../images/${image}`)
     },
   },
@@ -74,7 +77,6 @@ $cardImageDesktop: 100px;
     margin-top: calc(((#{$cardImageMobile} / 2) + #{$box-padding}) * -1);
 
     @include lg {
-      flex: 1;
       width: $cardImageDesktop;
       margin: 0;
     }
@@ -132,10 +134,6 @@ $cardImageDesktop: 100px;
 
     @include lg {
       flex: 2;
-    }
-
-    .tag-box {
-      margin: 8px 16px 8px 0;
     }
   }
 }

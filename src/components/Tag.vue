@@ -1,18 +1,28 @@
 <template>
-  <div class="tag" @click="setTag(tag)">
+  <div class="tag" :class="{ active }" @click="toggleActive(tag)">
     <span>{{ tag }}</span>
   </div>
 </template>
 
 <script>
-import { mutations } from '../store'
+import { mutations, store } from '../store'
 
 export default {
   props: {
     tag: String,
   },
+  computed: {
+    active() {
+      return store.tags.includes(this.tag.toLowerCase())
+    },
+  },
   methods: {
     setTag: mutations.setTag,
+    removeTag: mutations.removeTag,
+
+    toggleActive(tag) {
+      this.active ? this.removeTag(tag) : this.setTag(tag)
+    },
   },
 }
 </script>
@@ -26,11 +36,12 @@ export default {
   border-radius: 7px;
   overflow: hidden;
   transition: all 0.3s ease;
+  cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &.active {
     background-color: $primary;
     color: #fff;
-    cursor: pointer;
   }
 }
 </style>
