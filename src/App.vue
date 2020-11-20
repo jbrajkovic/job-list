@@ -29,7 +29,7 @@ export default {
   components: { Header, FilterBox, JobCard, Loader },
   data() {
     return {
-      baseUrl: process.env.VUE_APP_BASE_URL,
+      baseUrl: process.env.BASE_URL,
       jobsLoader: true,
       jobList: [],
     }
