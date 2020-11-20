@@ -38,10 +38,17 @@ export default {
   transition: all 0.3s ease;
   cursor: pointer;
 
-  &:hover,
   &.active {
     background-color: $primary;
     color: #fff;
+  }
+
+  //disable hover on mobile
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary;
+      color: #fff;
+    }
   }
 }
 </style>
