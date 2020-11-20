@@ -1,5 +1,9 @@
 # job-list
 
+Dodao bih još da se "FEATURED" poslovi nalaze uvijek na vrhu bez obzira kada su dodani u listu,
+ali ne bih išao previše van opisa zadataka koji sam dobio.
+Da ne ispadne da se namecem na silu. :)
+
 ## Project setup
 
 ```
