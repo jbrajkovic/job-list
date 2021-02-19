@@ -5,8 +5,8 @@
       <div class="job-info-top">
         <p class="company">{{ job.company }}</p>
         <div class="badges">
-          <Badge text="New!" :primary="true" />
-          <Badge text="Featured" />
+          <Badge v-if="job.new" text="New!" :primary="true" />
+          <Badge v-if="job.featured" text="Featured" />
         </div>
       </div>
 
