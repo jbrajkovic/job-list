@@ -1,15 +1,12 @@
 <template>
   <header>
-    <img
-      class="header-desktop"
-      src="../images/bg-header-desktop.svg"
-      alt="header-desktop"
-    />
-    <img
-      class="header-mobile"
-      src="../images/bg-header-mobile.svg"
-      alt="header-mobile"
-    />
+    <picture>
+        <source media='(min-width:768px)' srcset="../images/bg-header-desktop.svg" />
+        <img
+          src="../images/bg-header-mobile.svg"
+          alt='Header'
+        />
+      </picture>
   </header>
 </template>
 
